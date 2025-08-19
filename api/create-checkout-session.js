@@ -29,7 +29,7 @@ export default async function handler(req, res) {
       custom_text: {
         terms_of_service_acceptance: {
           message:
-            "Elfogadom az <a href='https://www.tanyeros-coaching.hu/shop_help.php?tab=terms' target='_blank'>Általános Szerződési Feltételeket</a> és az <a href='https://www.tanyeros-coaching.hu/shop_help.php?tab=terms' target='_blank'>Adatkezelési Tájékoztatót</a>. Tudomásul veszem, hogy a megrendelés elküldése fizetési kötelezettséggel jár. Továbbá hozzájárulok, hogy a díj kifizetése után azonnal hozzáférést kapjak a szolgáltatáshoz és tudomásul veszem, hogy ezt követően nem gyakorolhatok elállási jogot a 45/2014. (II.26.) Korm. rendelet 29. § m) pontja alapján."
+            "Elfogadom az Általános Szerződési Feltételeket és az Adatkezelési Tájékoztatót. Tudomásul veszem, hogy a megrendelés elküldése fizetési kötelezettséggel jár. Továbbá hozzájárulok, hogy a díj kifizetése után azonnal hozzáférést kapjak a szolgáltatáshoz, és tudomásul veszem, hogy ezt követően nem gyakorolhatok elállási jogot a 45/2014. (II.26.) Korm. rendelet 29. § m) pontja alapján."
         }
       }
     });
