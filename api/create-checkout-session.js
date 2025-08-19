@@ -1,6 +1,15 @@
 import Stripe from "stripe";
 
 export default async function handler(req, res) {
+  // --- CORS: engedjük a saját weboldaladat hívni ezt az API-t ---
+  res.setHeader("Access-Control-Allow-Origin", "https://www.tanyeros-coaching.hu");
+  res.setHeader("Access-Control-Allow-Methods", "POST, OPTIONS");
+  res.setHeader("Access-Control-Allow-Headers", "Content-Type");
+  if (req.method === "OPTIONS") {
+    return res.status(200).end(); // preflight válasz
+  }
+  // ----------------------------------------------------------------
+
   if (req.method !== "POST") {
     res.setHeader("Allow", "POST");
     return res.status(405).end("Method Not Allowed");
@@ -15,10 +24,8 @@ export default async function handler(req, res) {
       success_url: process.env.SUCCESS_URL,
       cancel_url: process.env.CANCEL_URL,
 
-      // Kötelező jelölőnégyzet a Stripe Checkouton
       consent_collection: { terms_of_service: "required" },
 
-      // A checkbox melletti jogi szöveg (ÁSZF + Adatkezelés linkkel)
       custom_text: {
         terms_of_service_acceptance: {
           message:
