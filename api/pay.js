@@ -14,6 +14,7 @@ export default async function handler(req, res) {
       line_items: [{ price: process.env.PRICE_ID, quantity: 1 }],
       success_url: process.env.SUCCESS_URL,
       cancel_url: process.env.CANCEL_URL,
+billing_address_collection: "required",
       consent_collection: { terms_of_service: "required" },
       custom_text: {
         terms_of_service_acceptance: {
